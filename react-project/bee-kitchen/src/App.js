@@ -1,6 +1,5 @@
 import "./categories.styles.scss";
-import CategoryItem from "./components/category-item/category-item.component";
-import CategoryList from "./components/category-list/category-list.component";
+import Directory from "./components/directory/directory.component";
 
 const App = () => {
   const categories = [
@@ -35,14 +34,7 @@ const App = () => {
         "https://th.bing.com/th/id/OIP.VJn01dSlBU94yNGF7jJXIwHaE8?pid=ImgDet&rs=1",
     },
   ];
-  return (
-    <div className="categories-container">
-      {/* {categories.map((category) => (
-        <CategoryItem key={category.id} category={category} />
-      ))} */}
-      <CategoryList categories={categories}/>
-    </div>
-  );
+  return <Directory categories={categories} />;
 };
 
 export default App;
