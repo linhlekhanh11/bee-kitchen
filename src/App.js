@@ -1,40 +1,25 @@
 import "./categories.styles.scss";
-import Directory from "./components/directory/directory.component";
+import HomePage from "./components/routes/home/home.component";
+import { Routes, Route } from "react-router-dom";
+import Navigation from "./components/routes/navigation/navigation.component";
+import SignIn from "./components/routes/sign-in/sign-in.component";
+
+
+
+const Shop = () => {
+  return <h1>Hello</h1>;
+};
 
 const App = () => {
-  const categories = [
-    {
-      id: 1,
-      title: "Pastry",
-      imageUrl:
-        "https://img.taste.com.au/HFI3WISt/w643-h428-cfill-q90/taste/2018/03/apr-18_apple-blueberry-pie-with-cinnamon-pastry-3000x2000-136232-1.jpg",
-    },
-    {
-      id: 2,
-      title: "Cake",
-      imageUrl:
-        "https://th.bing.com/th/id/OIP.-P-kgafEiuGkZ8a_RGLMtwHaHa?pid=ImgDet&rs=1",
-    },
-    {
-      id: 3,
-      title: "Small Bites",
-      imageUrl:
-        "https://iamafoodblog.b-cdn.net/wp-content/uploads/2020/07/the-best-taiwanese-fried-chicken-recipe-4449w.jpg",
-    },
-    {
-      id: 4,
-      title: "Milk Tea",
-      imageUrl:
-        "https://th.bing.com/th/id/OIP.A2I0x_I5GDNuO2LzjdhHXwHaE8?pid=ImgDet&rs=1",
-    },
-    {
-      id: 5,
-      title: "Cafe",
-      imageUrl:
-        "https://th.bing.com/th/id/OIP.VJn01dSlBU94yNGF7jJXIwHaE8?pid=ImgDet&rs=1",
-    },
-  ];
-  return <Directory categories={categories} />;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<HomePage />} />
+        <Route path="shop" element={<Shop />} />
+        <Route path="sign-in" element={<SignIn />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;
