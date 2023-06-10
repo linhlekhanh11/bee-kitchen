@@ -42,9 +42,7 @@ const reduceCartItem = (cartItems, productToRemove) => {
 };
 
 const clearCartItem = (cartItems, productToClear) => {
-
-    return cartItems.filter((cartItem) => cartItem.id !== productToClear.id);
-
+  return cartItems.filter((cartItem) => cartItem.id !== productToClear.id);
 };
 
 //as the actual value you want to accesssrc/context/user.context.jsx
@@ -56,16 +54,17 @@ export const CartContext = createContext({
   totalItemsInCart: 0,
   reduceItemFromCart: () => {},
   clearItemFromCart: () => {},
+  total: 0,
 });
 
 export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalItemsInCart, setTotalItemsInCart] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const reduceItemFromCart = (productToRemove) => {
     setCartItems(reduceCartItem(cartItems, productToRemove));
-    // setTotalItemsInCart(totalItemsInCart - 1);
   };
   const clearItemFromCart = (productToClear) => {
     setCartItems(clearCartItem(cartItems, productToClear));
@@ -73,9 +72,7 @@ export const CartProvider = ({ children }) => {
 
   const addItemToCart = (productToAdd) => {
     setCartItems(addCartItem(cartItems, productToAdd));
-    // setTotalItemsInCart(totalItemsInCart + 1);
   };
-
 
   useEffect(() => {
     const newTotalItemsInCart = cartItems.reduce(
@@ -84,6 +81,13 @@ export const CartProvider = ({ children }) => {
     );
     setTotalItemsInCart(newTotalItemsInCart);
   }, [cartItems]);
+  useEffect(() => {
+    const newTotal = cartItems.reduce(
+      (total, cartItem) => total + cartItem.price * cartItem.quantity,
+      0
+    );
+    setTotal(newTotal);
+  }, [cartItems]);
   const value = {
     isCartOpen,
     setIsCartOpen,
@@ -91,7 +95,8 @@ export const CartProvider = ({ children }) => {
     cartItems,
     totalItemsInCart,
     reduceItemFromCart,
-    clearItemFromCart
+    clearItemFromCart,
+    total,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
