@@ -19,7 +19,6 @@ import {
   writeBatch,
   query,
   getDocs,
-  QuerySnapshot,
 } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
