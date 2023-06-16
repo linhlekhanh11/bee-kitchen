@@ -7,7 +7,10 @@ const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product;
   const {addItemToCart} = useContext(CartContext);
 
-  const handleAddItemToCart = () => addItemToCart(product)
+  const handleAddItemToCart = () => {
+    addItemToCart(product);
+    alert('Successfully added item in the cart')
+  }
   return (
     <div className="product-card-container">
       <img src={imageUrl} alt={`${name}`} />
