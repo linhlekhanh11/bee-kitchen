@@ -90,6 +90,13 @@ const SHOP_DATA = [
           "https://th.bing.com/th/id/R.953409bd87f4829a594a96fa67effc56?rik=RRpvMzp%2f%2f92aDw&riu=http%3a%2f%2fbloximages.newyork1.vip.townnews.com%2ffeastmagazine.com%2fcontent%2ftncms%2fassets%2fv3%2feditorial%2fa%2ff4%2faf495588-1b45-11e5-aee5-273201f13e05%2f558c0ec5397aa.image.jpg%3fresize%3d1200%2c800&ehk=aSWnPTe5kY3t4RBL%2bRnmQ9SLIYSv36DFul4Lij4B%2fp8%3d&risl=&pid=ImgRaw&r=0",
         price: 9,
       },
+      {
+        id: 21,
+        name: "Korean Cheese Corn Dog",
+        imageUrl:
+          "https://th.bing.com/th/id/OIP.jU7yPbEBtwJuA5aPOF7s7wAAAA?pid=ImgDet&rs=1",
+        price: 9,
+      },
     ],
   },
   {
@@ -107,14 +114,14 @@ const SHOP_DATA = [
         id: 14,
         name: "Nutella Hot Chocolate",
         imageUrl:
-          "https://en.cooking-tree.com/how-to-make-nutella-hot-chocolate/",
+          "https://en.cooking-tree.com/wp-content/uploads/2022/07/Nutella-Hot-Chocolate-Cooking-tree-13-1170x658.jpg",
         price: 7,
       },
       {
         id: 15,
         name: "Hot Cappucino",
         imageUrl:
-        "https://th.bing.com/th/id/OIP.JBBAPZUxiQ2hs8GgKX7EvgHaHa?pid=ImgDet&rs=1",
+          "https://th.bing.com/th/id/OIP.JBBAPZUxiQ2hs8GgKX7EvgHaHa?pid=ImgDet&rs=1",
         price: 5,
       },
       {
