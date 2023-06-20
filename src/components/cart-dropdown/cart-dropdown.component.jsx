@@ -3,9 +3,10 @@ import { useContext } from "react";
 import CartItem from "../cart-item/cart-item.component";
 import { CartContext } from "../../context/cart.context";
 import "./cart-dropdown.styles.jsx";
+
 import { useNavigate } from "react-router-dom";
 import {
-  CartDropdownContainer,
+  CartDropDownContainer,
   CartItems,
   CheckoutButton,
 } from "./cart-dropdown.styles.jsx";
@@ -18,7 +19,7 @@ const CartDropdown = () => {
     navigate("/checkout");
   };
   return (
-    <CartDropdownContainer>
+    <CartDropDownContainer>
       <CartItems>
         {cartItems.map((item) => (
           <CartItem key={item.id} cartItem={item} />
@@ -28,7 +29,7 @@ const CartDropdown = () => {
         {" "}
         GO TO CHECKOUT
       </CheckoutButton>
-    </CartDropdownContainer>
+    </CartDropDownContainer>
   );
 };
 export default CartDropdown;
