@@ -4,7 +4,7 @@ import FormInput from "../form-input/form-input.component";
 import { signInWithGooglePopup } from "../../utils/firebase/firebase.utils";
 
 import "./sign-in-form.styles.scss";
-import Button from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
 const defaultformFields = {
   email: "",
@@ -80,7 +80,11 @@ const SignInForm = () => {
           <Button type="submit" onClick={handleSubmit}>
             SIGN IN
           </Button>
-          <Button type="button" onClick={logGoogleUser} buttonType="google">
+          <Button
+            type="button"
+            onClick={logGoogleUser}
+            buttonType={BUTTON_TYPE_CLASSES.google}
+          >
             GOOGLE SIGN IN
           </Button>
         </div>
