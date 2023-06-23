@@ -1,15 +1,11 @@
-// import {backgroundImage, StyledBody, StyledShopNow,StyledTitle} from "./directory-item.styles.jsx";
-
-import { DirectoryItemContainer, StyledBody, StyledShopNow, StyledTitle } from "./directory-item.styles";
+import { DirectoryItemContainer, BackgroundImage, StyledBody, StyledShopNow, StyledTitle } from "./directory-item.styles";
 
 const DirectoryItem = ({ category }) => {
   const { imageUrl, title } = category;
   return (
     <DirectoryItemContainer>
-      <div
-        className="background-image"
+      <BackgroundImage
         imageUrl={imageUrl}
-
       />
       <StyledBody>
         <StyledTitle>{title}</StyledTitle>
