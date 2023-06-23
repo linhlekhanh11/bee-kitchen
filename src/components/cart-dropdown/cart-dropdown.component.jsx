@@ -9,7 +9,9 @@ import {
   CartDropDownContainer,
   CartItems,
   CheckoutButton,
+  EmptyCart,
 } from "./cart-dropdown.styles.jsx";
+import Button from "../button/button.component";
 
 const CartDropdown = () => {
   const { cartItems } = useContext(CartContext);
@@ -21,14 +23,17 @@ const CartDropdown = () => {
   return (
     <CartDropDownContainer>
       <CartItems>
-        {cartItems.map((item) => (
+        {cartItems.length ? (cartItems.map((item) => (
           <CartItem key={item.id} cartItem={item} />
-        ))}
+        ))): (
+          <EmptyCart> Your cart is empty </EmptyCart>
+        )
+        }
       </CartItems>
-      <CheckoutButton onClick={goToCheckoutHandler}>
+      <Button onClick={goToCheckoutHandler}>
         {" "}
         GO TO CHECKOUT
-      </CheckoutButton>
+      </Button>
     </CartDropDownContainer>
   );
 };
