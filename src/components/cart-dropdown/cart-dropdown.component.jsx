@@ -23,17 +23,13 @@ const CartDropdown = () => {
   return (
     <CartDropDownContainer>
       <CartItems>
-        {cartItems.length ? (cartItems.map((item) => (
-          <CartItem key={item.id} cartItem={item} />
-        ))): (
+        {cartItems.length ? (
+          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
+        ) : (
           <EmptyCart> Your cart is empty </EmptyCart>
-        )
-        }
+        )}
       </CartItems>
-      <Button onClick={goToCheckoutHandler}>
-        {" "}
-        GO TO CHECKOUT
-      </Button>
+      <Button onClick={goToCheckoutHandler}> GO TO CHECKOUT</Button>
     </CartDropDownContainer>
   );
 };
