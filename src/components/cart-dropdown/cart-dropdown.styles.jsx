@@ -40,5 +40,5 @@ export const CheckoutButton = styled(Button)`
 
 export const EmptyCart = styled.span`
   font-size: 18px;
-  margin: 50px auto;
+  margin: 80px auto;
 `;
