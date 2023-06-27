@@ -1,9 +1,8 @@
 import { useState, createContext, useEffect } from "react";
 import {
-  addCollectionAndDocuments,
   getCategoriesAndDocuments,
 } from "../utils/firebase/firebase.utils.js";
-import SHOP_DATA from "../shop-data.js";
+// import SHOP_DATA from "../shop-data.js";
 
 //as the actual value you want to accesssrc/context/user.context.jsx
 export const CategoriesContext = createContext({

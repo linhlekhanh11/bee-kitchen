@@ -1,5 +1,5 @@
-import { Fragment, useContext, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Fragment, useContext } from "react";
+import { Outlet } from "react-router-dom";
 import { ReactComponent as Logo } from "../../../assets/bee-kitchen.svg";
 
 import { UserContext } from "../../../context/user.context";

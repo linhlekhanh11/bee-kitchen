@@ -11,10 +11,9 @@ import {
   CheckoutButton,
   EmptyCart,
 } from "./cart-dropdown.styles.jsx";
-import Button from "../button/button.component";
 
 const CartDropdown = () => {
-  const { cartItems, isCartOpen } = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);
   const navigate = useNavigate();
 
   const goToCheckoutHandler = () => {
