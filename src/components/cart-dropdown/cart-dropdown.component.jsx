@@ -14,7 +14,7 @@ import {
 import Button from "../button/button.component";
 
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, isCartOpen } = useContext(CartContext);
   const navigate = useNavigate();
 
   const goToCheckoutHandler = () => {
@@ -29,7 +29,7 @@ const CartDropdown = () => {
           <EmptyCart> Your cart is empty </EmptyCart>
         )}
       </CartItems>
-      <Button onClick={goToCheckoutHandler}> GO TO CHECKOUT</Button>
+      <CheckoutButton onClick={goToCheckoutHandler}> GO TO CHECKOUT</CheckoutButton>
     </CartDropDownContainer>
   );
 };
