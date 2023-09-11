@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import {
   getCategoriesAndDocuments,
 } from "../utils/firebase/firebase.utils.js";
@@ -9,8 +9,36 @@ export const CategoriesContext = createContext({
   categoriesMap: {},
 });
 
+export const CATEGORIES_TYPE = {
+  SET_CURRENT_CATEGORIES: "SET_CURRENT_CATEGORIES",
+};
+
+const categoriesReducer = (state, action) => {
+  const { type, payload } = action;
+
+  switch (type) {
+    case CATEGORIES_TYPE.SET_CURRENT_CATEGORIES:
+      return {
+        ...state,
+        categoriesMap: payload,
+      };
+    case "increment":
+      return {
+        value: state.value + 1,
+      };
+    default:
+      throw new Error(`Unhandled type ${type} in categoriesReducer`);
+  }
+};
+const INITIAL_STATE = {
+  categoriesMap: {},
+};
 export const CategoriesProvider = ({ children }) => {
-  const [categoriesMap, setCategoriesMap] = useState([]);
+  const [{categoriesMap}, dispatch ] = useReducer(categoriesReducer, INITIAL_STATE)
+  const setCategoriesMap = (user) => {
+    dispatch({ type: CATEGORIES_TYPE.SET_CURRENT_CATEGORIES, payload: user })
+  }
+  // console.log(categoriesMap)
   useEffect(() => {
     const getCategoriesMap = async () => {
       const categoryMap = await getCategoriesAndDocuments();
